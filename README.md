@@ -43,4 +43,19 @@
             binding.title.text = item.title
         }
     }
-    
+#  
+#  
+### 3. MainActivity
+#### 1) item data / adapter 선언
+    var listdata:MutableList<item_data> = mutableListOf()
+    val adapter = CustomAdapter()
+#  
+#### 2) recyclerView(design > layout) 의 adapter / layoutManager 정의
+    binding.recyclerView.adapter = adapter
+    binding.recyclerView.layoutManager=LinearLayoutManager(this)
+#  
+#### 3) recyclerView Add / Update
+    listdata.add(item_data(name, title, timestep))
+    adapter.replaceList(listdata)
+  
+
